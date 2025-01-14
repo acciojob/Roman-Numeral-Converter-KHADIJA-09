@@ -11,6 +11,22 @@ function convertToRoman(num) {
 
   //your code here
 
+  let result = '';
+
+  // Loop through each roman numeral and value
+  for (let i = 0; i < obj.length; i++) {
+    const [symbol, value] = obj[i];
+    
+    // Determine how many times the symbol fits into the number
+    while (num >= value) {
+      result += symbol;  // Add the symbol to the result
+      num -= value;      // Subtract the value from num
+    }
+  }
+
+  return result;
+
+
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
